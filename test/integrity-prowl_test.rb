@@ -1,6 +1,6 @@
 require 'test_helper'
 require 'integrity/notifier/test'
-require 'integrity/notifier/integrity-prowl'
+require 'integrity/notifier/prowl'
 
 class IntegrityProwlTest < Test::Unit::TestCase
   include Integrity::Notifier::Test
