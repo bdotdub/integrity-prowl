@@ -3,21 +3,18 @@ Integrity
 
 [Integrity][] is your friendly automated Continuous Integration server.
 
-Integrity Dummy Notifier
+Integrity Prowl Notifier
 ========================
 
-This is a dummy Integrity notifier that does not do anything but registering itself with the Integrity server. Its only purpose is being used as a starting point for creating more complex and useful notifiers.
 
 Setup Instructions
 ==================
 
-Just install this gem via `sudo gem install matflores-integrity-dummy` and then in your
+Just install this gem via `sudo gem install bdotdub-integrity-prowl` and then in your
 Rackup (ie, `config.ru`) file:
 
     require "rubygems"
-    require "integrity/notifier/dummy"
-
-Notice that the only thing this notifier will do is to write a message to Integrity's log file whenever it gets called.
+    require "integrity/notifier/prowl"
 
 License
 =======
@@ -46,4 +43,4 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 [Integrity]: http://integrityapp.com
-[matflores]: http://matflores.com
+[Benny Wong]: http://bwong.net

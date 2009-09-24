@@ -4,12 +4,12 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "integrity-dummy"
-    gem.summary = "Dummy notifier for the Integrity continuous integration server"
-    gem.description = "Serves as a basis for creating more complex Integrity notifiers"
-    gem.email = "mflores@atlanware.com"
-    gem.homepage = "http://integrityapp.com"
-    gem.authors = ["Matías Flores"]
+    gem.name = "integrity-prowl"
+    gem.summary = "Prowl notifier for the Integrity continuous integration server"
+    gem.description = "Sends a notification from Integrity to Prowl after each build"
+    gem.email = "benny@bwong.net"
+    gem.homepage = "http://github.com/bdotdub/integrity-prowl"
+    gem.authors = ["Benny Wong"]
     gem.add_dependency "integrity"
     gem.rubyforge_project = "integrity"
   end
@@ -51,7 +51,7 @@ Rake::RDocTask.new do |rdoc|
   end
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "integrity-dummy #{version}"
+  rdoc.title = "integrity-prowl #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

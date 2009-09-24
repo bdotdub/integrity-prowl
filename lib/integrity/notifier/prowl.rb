@@ -2,7 +2,7 @@ require 'integrity'
 
 module Integrity
   class Notifier
-    class Dummy < Notifier::Base
+    class Prowl < Notifier::Base
       def self.to_haml
       end
 
@@ -10,10 +10,11 @@ module Integrity
       end
 
       def to_s
-        'Dummy'
+        'Prowl'
       end
     end
 
-    register Dummy # Don't forget to register your notifier!
+    register Prowl # Don't forget to register your notifier!
   end
 end
+

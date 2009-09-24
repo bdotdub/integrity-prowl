@@ -1,7 +1,7 @@
-= integrity-dummy
+= integrity-prowl
 
-A dummy notifier for the Integrity continuous integration server.
+A Prowl notifier for the Integrity continuous integration server.
 
 == Copyright
 
-Copyright (c) 2009 Matías Flores. See LICENSE for details.
+Copyright (c) 2009 Benny Wong. See LICENSE for details.
