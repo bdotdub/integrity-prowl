@@ -1,19 +1,24 @@
 require 'integrity'
+require 'prowl'
 
 module Integrity
   class Notifier
     class Prowl < Notifier::Base
+      attr_reader :config
+
       def self.to_haml
         File.read(File.dirname(__FILE__) + '/config.haml')
       end
 
       def deliver!
-        if api_keys = config['api_keys']
+        if api_keys = config[:api_keys]
           api_keys.split(',').each do |key|
-            Prowl.add(key, { :application  => "Integrity",
-                             :event        => short_message,
-                             :description  => long_message
-            })
+            prowl_params = {}
+            prowl_params[:application]  = 'Integrity'
+            prowl_params[:event]        = short_message
+            prowl_params[:description]  = full_message
+
+            ::Prowl.add(key, prowl_params)
           end
         end
       end
