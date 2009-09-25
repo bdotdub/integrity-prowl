@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{integrity-prowl}
-  s.version = "0.1.2"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Benny Wong"]
-  s.date = %q{2009-09-24}
+  s.date = %q{2009-09-25}
   s.description = %q{Sends a notification from Integrity to Prowl after each build}
   s.email = %q{benny@bwong.net}
   s.extra_rdoc_files = [
@@ -25,6 +25,10 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "integrity-prowl.gemspec",
+     "lib/integrity/notifier/config.haml",
+     "lib/integrity/notifier/prowl.rb",
+     "test/integrity_prowl_test.rb",
      "test/test_helper.rb"
   ]
   s.homepage = %q{http://github.com/bdotdub/integrity-prowl}
@@ -34,7 +38,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{Prowl notifier for the Integrity continuous integration server}
   s.test_files = [
-    "test/integrity-prowl_test.rb",
+    "test/integrity_prowl_test.rb",
      "test/test_helper.rb"
   ]
 
@@ -44,10 +48,13 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<integrity>, [">= 0"])
+      s.add_runtime_dependency(%q<prowl>, [">= 0"])
     else
       s.add_dependency(%q<integrity>, [">= 0"])
+      s.add_dependency(%q<prowl>, [">= 0"])
     end
   else
     s.add_dependency(%q<integrity>, [">= 0"])
+    s.add_dependency(%q<prowl>, [">= 0"])
   end
 end
