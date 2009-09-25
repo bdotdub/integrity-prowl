@@ -25,12 +25,14 @@ class IntegrityProwlTest < Test::Unit::TestCase
       end
 
       should 'add n prowl message with n keys' do
-        keys = (0...rand(100)).map{ |n| "api_key_#{n}" }
-        config = { :api_keys => keys.join(',') }
-        flexmock(::Prowl).should_receive(:add).times(keys.length)
+        [5, 10, 25, 50].each do |to|
+          keys = (0...to).map{ |n| "api_key_#{n}" }
+          config = { :api_keys => keys.join(',') }
+          flexmock(::Prowl).should_receive(:add).times(keys.length)
 
-        notifier = Integrity::Notifier::Prowl
-        notifier.notify_of_build(Integrity::Build.gen(:successful), config)
+          notifier = Integrity::Notifier::Prowl
+          notifier.notify_of_build(Integrity::Build.gen(:successful), config)
+        end
       end
     end
 

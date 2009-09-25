@@ -1,3 +1,9 @@
 %p.normal
-  %label{ :for => "prowl_api_keys" } Email
+  %div
+    Enter your
+    %a{ :href => 'https://prowl.weks.net/' } Prowl
+    API Key(s) below. Get your key here:
+    %a{ :href => 'https://prowl.weks.net/settings.php' } Prowl Settings
+  %label{ :for => "prowl_api_keys" } API Key(s)
+  %small (separated by commas):
   %input.text#tumblr_notifier_email{ :name => "notifiers[Prowl][api_keys]", :value => config['api_keys'], :type => 'text' }
