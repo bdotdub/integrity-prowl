@@ -17,7 +17,7 @@ class IntegrityProwlTest < Test::Unit::TestCase
 
     context 'with valid API keys' do
       should 'add one prowl message with one key' do
-        config = { :api_keys => 'an_api_key' }
+        config = { 'api_keys' => 'an_api_key' }
         flexmock(::Prowl).should_receive(:add).once
 
         notifier = Integrity::Notifier::Prowl
@@ -27,7 +27,7 @@ class IntegrityProwlTest < Test::Unit::TestCase
       should 'add n prowl message with n keys' do
         [5, 10, 25, 50].each do |to|
           keys = (0...to).map{ |n| "api_key_#{n}" }
-          config = { :api_keys => keys.join(',') }
+          config = { 'api_keys' => keys.join(',') }
           flexmock(::Prowl).should_receive(:add).times(keys.length)
 
           notifier = Integrity::Notifier::Prowl
@@ -38,7 +38,7 @@ class IntegrityProwlTest < Test::Unit::TestCase
 
     should 'not notify prowl if no key is provided' do
       [nil, ''].each do |key|
-        config = { :api_keys => key }
+        config = { 'api_keys' => key }
         flexmock(::Prowl).should_receive(:add).times(0)
 
         notifier = Integrity::Notifier::Prowl
