@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{integrity-prowl}
-  s.version = "0.2.0"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Benny Wong"]
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
      "integrity-prowl.gemspec",
      "lib/integrity/notifier/config.haml",
      "lib/integrity/notifier/prowl.rb",
+     "test/dict",
      "test/integrity_prowl_test.rb",
      "test/test_helper.rb"
   ]
