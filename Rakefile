@@ -11,6 +11,7 @@ begin
     gem.homepage = "http://github.com/bdotdub/integrity-prowl"
     gem.authors = ["Benny Wong"]
     gem.add_dependency "integrity"
+    gem.add_dependency "prowl"
     gem.rubyforge_project = "integrity"
   end
 
