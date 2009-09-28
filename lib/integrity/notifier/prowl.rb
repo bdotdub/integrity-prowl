@@ -16,7 +16,7 @@ module Integrity
         if api_keys = config['api_keys']
           api_keys.split(',').each do |key|
             prowl_params = {}
-            prowl_params[:application]  = 'Integrity'
+            prowl_params[:application]  = commit.project.name
             prowl_params[:event]        = short_message
             prowl_params[:description]  = full_message
 

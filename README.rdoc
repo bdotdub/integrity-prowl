@@ -1,7 +1,0 @@
-= integrity-prowl
-
-A Prowl notifier for the Integrity continuous integration server.
-
-== Copyright
-
-Copyright (c) 2009 Benny Wong. See LICENSE for details.
