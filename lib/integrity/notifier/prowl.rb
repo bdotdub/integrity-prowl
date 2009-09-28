@@ -11,6 +11,8 @@ module Integrity
       end
 
       def deliver!
+        return unless config[commit.status.to_s] == '1'
+
         if api_keys = config['api_keys']
           api_keys.split(',').each do |key|
             prowl_params = {}

@@ -1,9 +1,10 @@
 %p.normal
   %div
     Enter your
-    %a{ :href => 'https://prowl.weks.net/' } Prowl
-    API Key(s) below. Get your key here:
-    %a{ :href => 'https://prowl.weks.net/settings.php' } Prowl Settings
+    %a{ :href => 'https://prowl.weks.net/settings.php' } Prowl API Key(s)
+    (separated by commas)
   %label{ :for => "prowl_api_keys" } API Key(s)
-  %small (separated by commas):
   %input.text#tumblr_notifier_email{ :name => "notifiers[Prowl][api_keys]", :value => config['api_keys'], :type => 'text' }
+  %input.checkbox#tumblr_notifier_successful{ :name => "notifiers[Prowl][successful]", :checked => config['successful'], :type => 'checkbox', :value => "1" }
+  %input.checkbox#tumblr_notifier_failed{ :name => "notifiers[Prowl][failed]", :checked => config['failed'], :type => 'checkbox', :value => "1" }
+  %input.checkbox#tumblr_notifier_pending{ :name => "notifiers[Prowl][pending]", :checked => config['pending'], :type => 'checkbox', :value => "1" }
