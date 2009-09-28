@@ -5,6 +5,9 @@
     (separated by commas)
   %label{ :for => "prowl_api_keys" } API Key(s)
   %input.text#tumblr_notifier_email{ :name => "notifiers[Prowl][api_keys]", :value => config['api_keys'], :type => 'text' }
+  %label{ :for => "prowl_successful" } Successful:
   %input.checkbox#tumblr_notifier_successful{ :name => "notifiers[Prowl][successful]", :checked => config['successful'], :type => 'checkbox', :value => "1" }
+  %label{ :for => "prowl_failed" } Failed:
   %input.checkbox#tumblr_notifier_failed{ :name => "notifiers[Prowl][failed]", :checked => config['failed'], :type => 'checkbox', :value => "1" }
+  %label{ :for => "prowl_pending" } Pending:
   %input.checkbox#tumblr_notifier_pending{ :name => "notifiers[Prowl][pending]", :checked => config['pending'], :type => 'checkbox', :value => "1" }
